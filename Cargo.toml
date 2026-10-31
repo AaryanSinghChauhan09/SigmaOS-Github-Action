@@ -1,9 +1,9 @@
 [package]
-name = "sigmaos_github_action"
+name = "sigmaos-github-action"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
+license = "GPL-3.0-only"
+description = "Manifest validator and registry CLI for SigmaOS actions"
 
 [lib]
 name = "sigmaos_github_action"

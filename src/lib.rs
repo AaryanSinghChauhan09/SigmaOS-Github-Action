@@ -1,17 +1,17 @@
-// SPDX-License-Identifier: Apache-2.0
-//! SigmaOS-github-action - Linux Mint/Omarchy-inspired component for SigmaOS
+// SPDX-License-Identifier: GPL-3.0-only
+//! SigmaOS GitHub Actions registry component.
 //! Part of SigmaOS multi-repository architecture
 
 #![no_std]
 
-/// Component struct
+/// Component identity for the action registry.
 pub struct Component {
     name: &'static str,
 }
 
 impl Component {
     pub fn new() -> Self {
-        Self { name: "SigmaOS Component" }
+        Self { name: "SigmaOS-Github-Action" }
     }
 }
 
@@ -26,6 +26,6 @@ mod tests {
     #[test]
     fn test_creation() {
         let c = super::Component::new();
-        assert_eq!(c.name, "SigmaOS Component");
+        assert_eq!(c.name, "SigmaOS-Github-Action");
     }
 }

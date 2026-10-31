@@ -1,44 +1,42 @@
-    # SigmaOS-Github-Action
+# SigmaOS GitHub Action Registry
 
-    CI GitHub Actions collection
+This repository contains two related pieces:
 
-    Part of the **SigmaOS** sovereign operating-system ecosystem — a multi-repository
-    distribution modelled on Linux Mint and Omarchy Linux. See the parent
-    [`SigmaOS`](https://github.com/AaryanSinghChauhan09/SigmaOS) repository for the
-    full component index.
+- `src/core.py` and `bin/sigma-github-action`: a Python CLI for creating,
+  validating, indexing, and registering action manifests.
+- `src/lib.rs`: a small Rust component identity used by the SigmaOS component
+  catalog.
 
-    ## Upstream inspirations
-    - https://github.com/linuxmint/github-actions
+The Python registry CLI is the functional tool; the Rust library is an
+identity scaffold and does not execute GitHub Actions workflows.
 
-    ## Design principles applied
-    - **Single Source of Truth**
-- **Fail-Fast**
-- **Defensive Programming**
-- **Plan Before Act**
-- **KISS**
-- **DRY**
-- **Deterministic Testing**
+## Requirements
 
-    ## Usage
-    Verbs: `register, manifest, index, validate-manifest`
+- Python 3.11 or newer
+- Rust and Cargo for the component library
 
-    ```
-    $ sigma-registry manifest build-cache@sigmaos "Build cache" \
-    --version 1.0.0 --entry action.py --license GPL-3.0-or-later --out build-cache.manifest.json
-$ sigma-registry validate-manifest build-cache.manifest.json
-valid: build-cache@sigmaos 1.0.0
-$ sigma-registry index ./registry
-2 manifest(s) indexed
-$ sigma-registry register ./registry build-cache.manifest.json
-registered build-cache@sigmaos -> ./registry/index.json
+## Use the registry CLI
 
-    ```
+```sh
+bin/sigma-github-action --help
+bin/sigma-github-action manifest --help
+```
 
-    ## Build & test
-    ```
-    make build
-    make test
-    ```
+Available operations include `register`, `manifest`, `index`, and
+`validate-manifest`. Use the CLI help for the exact arguments and manifest
+schema.
 
-    ## Licence
-    GNU General Public License v3.0 (FOSS).
+## Build and checks
+
+```sh
+make build
+make test
+cargo check --lib
+```
+
+The GitHub Actions workflow compiles the Python sources and runs the Python
+unit suite on pushes and pull requests.
+
+## License
+
+GPL-3.0-only. See [`LICENSE`](LICENSE).
