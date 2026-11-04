@@ -1,10 +1,17 @@
 [package]
-name = "sigmaos-github-action"
+name = "sigmaos-component"
 version = "0.1.0"
 edition = "2021"
-license = "GPL-3.0-only"
-description = "Manifest validator and registry CLI for SigmaOS actions"
+authors = ["SigmaOS Team"]
+license = "MIT OR Apache-2.0"
+description = "SigmaOS component following engineering principles"
 
-[lib]
-name = "sigmaos_github_action"
-path = "src/lib.rs"
+[dependencies]
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+[dev-dependencies]
