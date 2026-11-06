@@ -2,7 +2,6 @@
 //! SigmaOS GitHub Actions registry component.
 //! Part of SigmaOS multi-repository architecture
 
-#![no_std]
 
 /// Component identity for the action registry.
 pub struct Component {
@@ -29,3 +28,10 @@ mod tests {
         assert_eq!(c.name, "SigmaOS-Github-Action");
     }
 }
+
+pub mod config;
+pub mod error;
+pub mod service;
+
+pub use config::Config;
+pub use error::ComponentError;
