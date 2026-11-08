@@ -6,4 +6,7 @@ dist/
 *.iso
 .venv/
 node_modules/
+/target
 /target/
+Cargo.lock
+*.swp
