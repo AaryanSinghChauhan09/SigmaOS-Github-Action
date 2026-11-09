@@ -10,3 +10,4 @@ node_modules/
 /target/
 Cargo.lock
 *.swp
+/target/
