@@ -3,12 +3,12 @@ name = "SigmaOS-Github-Action"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "Github-Action component"
+description = "CI GitHub Actions collection"
 upstream = []
 
 [contract]
 provides = ["component"]
-depends_on = []
+depends_on = ["SigmaOS-system"]
 
 [maturity]
 status = "Scaffold"
